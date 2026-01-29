@@ -1,12 +1,17 @@
 
 # Indefinite Arguments (**kwargs) Practice #1
 # Create a function called number_attributes that counts the number of parameters that are passed, and returns that number as the result.
+
 def number_attributes (**kwargs):
-    
+    return len(kwargs)
 
 
-
-
+# Example 1: No arguments
+print(number_attributes())  # Output: 0
+# Example 2: Three arguments
+print(number_attributes(name="Alice", age=30, city="New York"))  # Output: 3
+# Example 3: Different types of arguments
+print(number_attributes(a=1, b=[1, 2, 3], c={"key": "value"}))  # Output: 3
 
 
 
@@ -14,7 +19,17 @@ def number_attributes (**kwargs):
 # Indefinite Arguments (**kwargs) Practice #2
 # Create a function called list_attributes that returns in the form of a list the values of the attributes given in the form of keywords. The function must expect to receive any number of arguments of this type.
 
+def list_attributes(**kwargs):
+    return list(kwargs.values())
 
+result1 = list_attributes(a=1, b=2, c=3)
+print(result1)  # Output: [1, 2, 3]
+
+result2 = list_attributes(name="Alice", age=30, role="Engineer")
+print(result2)  # Output: ['Alice', 30, 'Engineer']
+
+result3 = list_attributes()
+print(result3)  # Output: [] (handles no arguments)
 
 
 
